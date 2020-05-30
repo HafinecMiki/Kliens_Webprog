@@ -1,0 +1,66 @@
+h1{
+    text-align: center;
+}
+body{
+    background-image: url("/Assets/background.jpg");
+    text-align: center;
+}
+td{
+    width: 200px;
+    height: 50px;
+}
+.Vissza{
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+}
+#back{
+    alt: "Back";
+    width: 100;
+    height: 75px;
+}
+#tabla{
+    border: 2px solid black;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+td{
+    border: 2px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+a:link {
+    color: Black;
+    }
+
+    a:visited {
+    color: Black;
+    }
+
+    a:hover {
+    color: Black;
+    }
+
+    a:active {
+    color: Black;
+    }
+#jobb_oldal{
+    width: 50%;
+    position:relative;
+    margin: 0px;
+}
+#bal_oldal{
+    position: absolute;
+    top: 80px;
+    right: 100px;
+    width: 500px;
+    height: 300px;
+}
+.JatekTabla{
+    width: 70%;
+    text-align: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}
