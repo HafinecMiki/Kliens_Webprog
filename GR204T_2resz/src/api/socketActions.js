@@ -1,18 +1,29 @@
-import { messageChannel } from "./index";
+export const LETREHOZ = 'LETREHOZ';
+export const PROBA = 'PROBA';
+export const PROBA2 = 'PROBA2';
 
-
-export function sendMessage(message) {
-  return () => {
-    messageChannel.create(message);
+export function szobaletrehoz(id) {
+  return{
+    type: LETREHOZ,
+    payload: {
+      id,
+    },
   };
 }
 
-export function receiveMessages() {
-  return (dispatch) => {
-    messageChannel.created((message) => {
-      if (message.type) {
-        dispatch(message);
-      }
-    });
+export function proba(id) {
+  return{
+    type: PROBA,
+    payload: {
+      id,
+    },
+  };
+}
+export function proba2(id) {
+  return{
+    type: PROBA2,
+    payload: {
+      id,
+    },
   };
 }

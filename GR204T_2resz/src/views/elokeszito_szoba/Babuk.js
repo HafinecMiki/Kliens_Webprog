@@ -1,13 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { modifyDate } from '../../state/actions';
+import { modifyDate, modifyDate2 } from '../../state/actions';
+import { sendMessage, receiveMessages } from '../../api/socketActions';
 
 export function Babuk() {
     const dispatch = useDispatch();
     const Babuk = useSelector((state) => state.babu.item);
     const createPlaylist = (id) => {
+        //dispatch(receiveMessages());
         dispatch(modifyDate(id));
-        //dispatch(sendMessage(modifyDate(id)));
+        dispatch(modifyDate2(id));
+        
     };
     return (
         <table id="tabla">

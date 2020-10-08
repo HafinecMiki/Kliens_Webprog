@@ -1,32 +1,16 @@
-import io from 'socket.io-client';
-export const BASE_PATH = 'http://webprogramozas.inf.elte.hu:3030';
+import { BabuAdatok } from '../domain/adatok';
+import { LETREHOZ } from './socketActions';
+const initialState= { item: BabuAdatok };
 
-// Osszuk meg a socketet több channel között
-let socket;
-
-export class MyPlaylistAppChannel {
-  constructor(resource) {
-    this.resource = resource;
-    if (!socket) {
-      socket = io(BASE_PATH);
+export function socket(state = initialState, action) {
+  switch (action.type) {
+    case LETREHOZ: {
+        console.log("action.payload.id")
+        state.item[12] = action.payload.id;
+      return{ item: [...state.item]}
     }
-  }
-
-  created(handler) {
-    const listener = (receivedMessage) => {
-      if (receivedMessage.emitter !== socket.id) {
-        handler(receivedMessage.message);
-      }
-    };
-    const event = `${this.resource} created`;
-    socket.on(event, listener);
-    return () => socket.off(event, listener);
-  }
-
-  create(message) {
-    socket.emit('create', this.resource, {
-      message,
-      emitter: socket.id,
-    });
+    default: {
+      return state;
+    }
   }
 }

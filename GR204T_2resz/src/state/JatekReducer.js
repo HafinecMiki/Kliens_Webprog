@@ -1,7 +1,7 @@
-import { JatekAdatok, szamlalo, HarcVesztes, JatekVege, BabuAdatok, Player1Adatok } from '../domain/adatok';
-import { LEPESPLAYER2, LEPESPLAYER1, BABU_LEPES } from './actions';
+import { JatekAdatok, szamlalo, HarcVesztes, JatekVege, BabuAdatok, Player1Adatok, Player2Adatok } from '../domain/adatok';
+import { LEPESPLAYER2, LEPESPLAYER1, BABU_LEPES, BABU_ATAD, BABU_ATAD2, KESZ1, KESZ2 } from './actions';
 
-const initialState = { item: JatekAdatok, babu: BabuAdatok, play: Player1Adatok };
+const initialState = { item: JatekAdatok, babu: BabuAdatok, play1: Player1Adatok, play2: Player2Adatok };
 
 export function JatekReducer(state = initialState, action) {
   switch (action.type) {
@@ -81,7 +81,7 @@ export function JatekReducer(state = initialState, action) {
                   if (state.item[action.payload.id + i].keret === "4px solid red") {
                     fel2 = "true";
                   }
-                  if (state.item[action.payload.id + i].keret === "4px solid blue"&& fel2 === "false")  {
+                  if (state.item[action.payload.id + i].keret === "4px solid blue" && fel2 === "false") {
                     fel2 = "true";
                     kettesfel2 = kettesfel2 + 1;
                     if (kettesfel2 === 1) {
@@ -196,7 +196,7 @@ export function JatekReducer(state = initialState, action) {
                 if (jobra === "false") {
                   state.item[action.payload.id + i].szin = "lightblue";
                 }
-                
+
                 if ((action.payload.id - i) % 6 === 5 || action.payload.id - i < 0) {
                   balra = "true";
                 }
@@ -556,6 +556,41 @@ export function JatekReducer(state = initialState, action) {
         }
 
       }
+      return { item: [...state.item] }
+    }
+    case BABU_ATAD2: {
+      if (action.payload.id !== "fasza" && action.payload.id !== "fasza2") {
+        console.log(action.payload.id);
+        for (let i = 24; i < 36; i++) {
+          state.item[i].id = action.payload.id[i - 24].id;
+          state.item[i].value = action.payload.id[i - 24].value;
+          state.item[i].szin = action.payload.id[i - 24].szin;
+          state.item[i].kep = action.payload.id[i - 24].kep;
+          state.item[i].keret = action.payload.id[i - 24].keret;
+        }
+      }
+
+      return { item: [...state.item] }
+    }
+    case BABU_ATAD: {
+      if (action.payload.id !== "fasza" && action.payload.id !== "fasza2") {
+      console.log(action.payload.id);
+      for (let i = 0; i < 12; i++) {
+        state.item[i].id = action.payload.id[i].id;
+        state.item[i].value = action.payload.id[i].value;
+        state.item[i].szin = action.payload.id[i].szin;
+        state.item[i].kep = action.payload.id[i].kep;
+        state.item[i].keret = action.payload.id[i].keret;
+      }
+    }
+      return { item: [...state.item] }
+    }
+    case KESZ1: {
+      state.item[36].id = true;
+      return { item: [...state.item] }
+    }
+    case KESZ2: {
+      state.item[36].value = true;
       return { item: [...state.item] }
     }
     default: {

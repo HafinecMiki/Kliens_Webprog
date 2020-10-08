@@ -1,12 +1,12 @@
-import { Player1Adatok} from '../domain/adatok';
+import { Player2Adatok} from '../domain/adatok';
 import { BabuAdatok } from '../domain/adatok';
-import { Modify_Date, ATHELYEZ } from './actions';
+import { Modify_Date2, ATHELYEZ2 } from './actions';
 
-const initialState= { item: Player1Adatok };
+const initialState= { item: Player2Adatok };
 
-export function Player1Reducer(state = initialState, action) {
+export function Player2Reducer(state = initialState, action) {
   switch (action.type) {
-    case Modify_Date: {
+    case Modify_Date2: {
         if(state.item[0].szin === "" && state.item[0].value === "" && state.item[0].kep === ""){
             state.item[0].szin = "green";
         }
@@ -47,7 +47,7 @@ export function Player1Reducer(state = initialState, action) {
         
         return{ item: [...state.item]}
     }
-    case ATHELYEZ: {
+    case ATHELYEZ2: {
         if(state.item[action.payload.id].szin === "green" && state.item[action.payload.id].value === ""){
             if(BabuAdatok[0].szin === "green"){
                 state.item[action.payload.id].kep = BabuAdatok[0].value;

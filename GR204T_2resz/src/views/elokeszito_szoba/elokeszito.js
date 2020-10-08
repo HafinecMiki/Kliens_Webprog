@@ -1,13 +1,43 @@
 import React from 'react';
 import { Tabla } from './Tabla';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Babuk } from './Babuk';
 import { Link } from 'react-router-dom';
-import {JatekAdatok, Player1Adatok } from '../../domain/adatok';
+import {JatekAdatok, Player1Adatok, BabuAdatok } from '../../domain/adatok';
+import { BabuAtad, Kesz1, Kesz2 } from '../../state/actions';
 
 
-export function Elokeszito() {
+export function Elokeszito({socket}) {
     const Babu = useSelector((state) => state.babu.item);
+    const dispatch = useDispatch();
+    function katto(){
+        socket.emit('sync-state', BabuAdatok[12].id, (Player1Adatok) , true, ack => {
+            console.log(ack)
+        })
+        socket.emit('sync-state', BabuAdatok[12].id, "fasza" , true, ack => {
+            console.log(ack)
+            dispatch(Kesz1())
+            
+        })
+        
+        
+        
+    }socket.on('state-changed', function(obj) {
+            console.log("fasza2", obj)
+            if(obj.state === "fasza2")
+                dispatch(Kesz2())
+        })
+        socket.on('state-changed', function(obj) {
+            console.log("Jófajta", obj.state)
+           /*for(let i = 0; i < 12; i++){
+                JatekAdatok[i].id = obj.state[i].id;
+                JatekAdatok[i].value = obj.state[i].value;
+                JatekAdatok[i].szin = obj.state[i].szin;
+                JatekAdatok[i].kep = obj.state[i].kep;
+                JatekAdatok[i].keret = obj.state[i].keret;
+            }*/
+            dispatch(BabuAtad(obj.state));
+        })
     JatekElokeszites();
     return(
         <div className="Elokeszito">
@@ -22,7 +52,7 @@ export function Elokeszito() {
             <h1>Ha készvagy kattints ide: </h1>
             {Babu[0].value === "" && Babu[1].value === "" && Babu[2].value === "" && Babu[3].value === "" && Babu[4].value === "" && Babu[5].value === "" && Babu[6].value === "" && Babu[7].value === "" && Babu[8].value === "" && Babu[9].value === "" && Babu[10].value === "" && Babu[11].value === "" ?
                 <Link exact="" to="/jatek">
-                    <img src="./Assets/kesz.png" width="100px" height="100px" alt="kesz" />
+                    <img src="./Assets/kesz.png" width="100px" height="100px" alt="kesz" onClick = {() => katto()}/>
                 </Link>
                 : "."}
             

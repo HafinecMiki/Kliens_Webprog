@@ -5,9 +5,10 @@ import { App } from './App';
 import { Provider } from 'react-redux';
 import { AdatProvider } from './domain/AdatProvider'
 import { configureStore } from './state/store';
+import { receiveMessages } from './api/socketActions';
 
 const store = configureStore();
-/*store.dispatch(receiveMessages());*/
+//store.dispatch(receiveMessages());
 
 ReactDOM.render(
   <Provider store={store}>

@@ -29,15 +29,15 @@ export var JatekAdatok = [
   {
     id: 0,
     value: "",
-    kep: "./Assets/zaszlo.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
-    ero: 99,
+    ero: 0,
   },
   {
     id: 1,
     value: "",
-    kep: "./Assets/bomba.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
     ero: 66,
@@ -45,14 +45,14 @@ export var JatekAdatok = [
   {
     id: 2,
     value: "",
-    kep: "./Assets/bomba.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
     ero: 66,
   },
   {
     id: 3,
-    value: "1",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -60,7 +60,7 @@ export var JatekAdatok = [
   },
   {
     id: 4,
-    value: "2",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -68,7 +68,7 @@ export var JatekAdatok = [
   },
   {
     id: 5,
-    value: "2",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -76,7 +76,7 @@ export var JatekAdatok = [
   },
   {
     id: 6,
-    value: "3",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -84,7 +84,7 @@ export var JatekAdatok = [
   },
   {
     id: 7,
-    value: "3",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -92,7 +92,7 @@ export var JatekAdatok = [
   },
   {
     id: 8,
-    value: "4",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -100,7 +100,7 @@ export var JatekAdatok = [
   },
   {
     id: 9,
-    value: "6",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -108,7 +108,7 @@ export var JatekAdatok = [
   },
   {
     id: 10,
-    value: "8",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -116,7 +116,7 @@ export var JatekAdatok = [
   },
   {
     id: 11,
-    value: "10",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -314,22 +314,25 @@ export var JatekAdatok = [
     keret: "4px solid blue",
     ero: 0,
   },
-  
+  {
+    id: false,
+    value: false,
+  },
 ];
 
 export const DefaultJatekAdatok = [
   {
     id: 0,
     value: "",
-    kep: "./Assets/zaszlo.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
-    ero: 99,
+    ero: 0,
   },
   {
     id: 1,
     value: "",
-    kep: "./Assets/bomba.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
     ero: 66,
@@ -337,14 +340,14 @@ export const DefaultJatekAdatok = [
   {
     id: 2,
     value: "",
-    kep: "./Assets/bomba.png",
+    kep: "",
     szin: "",
     keret: "4px solid red",
     ero: 66,
   },
   {
     id: 3,
-    value: "1",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -352,7 +355,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 4,
-    value: "2",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -360,7 +363,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 5,
-    value: "2",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -368,7 +371,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 6,
-    value: "3",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -376,7 +379,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 7,
-    value: "3",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -384,7 +387,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 8,
-    value: "4",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -392,7 +395,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 9,
-    value: "6",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -400,7 +403,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 10,
-    value: "8",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -408,7 +411,7 @@ export const DefaultJatekAdatok = [
   },
   {
     id: 11,
-    value: "10",
+    value: "",
     kep: "",
     szin: "",
     keret: "4px solid red",
@@ -807,6 +810,203 @@ export const DefaultPlayer1Adatok = [
   },
 ];
 
+export var Player2Adatok = [
+  {
+    id: 0,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 1,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 2,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 3,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 4,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 5,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 6,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 7,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 8,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 9,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 10,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 11,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+];
+
+export const DefaultPlayer2Adatok = [
+  {
+    id: 0,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 1,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 2,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 3,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 4,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 5,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 6,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 7,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 8,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 9,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 10,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+  {
+    id: 11,
+    value: "",
+    szin: "",
+    kep: "",
+    keret: "4px solid red",
+    ero: 0,
+  },
+];
 
 export var BabuAdatok = [
   {
@@ -880,6 +1080,10 @@ export var BabuAdatok = [
     value: "10",
     szin: "",
     ero: 10,
+  },
+  {
+    id: "",
+    value: false,
   },
 ];
 
